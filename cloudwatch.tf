@@ -7,7 +7,7 @@ resource "aws_cloudwatch_event_rule" "load-url" {
 }
 
 resource "aws_cloudwatch_event_target" "load-url-lambda" {
-  rule     = aws_cloudwatch_event_rule.load-url.name
-  arn      = aws_lambda_function.load-url.arn
-  role_arn = aws_iam_role.lambda.arn
+  rule      = aws_cloudwatch_event_rule.load-url.name
+  arn       = aws_lambda_function.load-url.arn
+  target_id = "Lambda"
 }
