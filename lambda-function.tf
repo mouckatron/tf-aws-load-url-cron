@@ -3,7 +3,7 @@ resource "aws_lambda_function" "load-url" {
 
   function_name = "${var.appname}-load-url"
 
-  filename         = "lambda.zip"
+  filename         = "${path.module}/lambda.zip"
   handler          = "main.lambda_handler"
   runtime          = "python3.6"
   source_code_hash = filebase64sha256("${path.module}/lambda.zip")
